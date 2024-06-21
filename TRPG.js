@@ -49,9 +49,9 @@ const attack = [{name: 'ストライク', type: buturi, property: {damage: 50, f
                 {name: 'スマッシュ', type: buturi, property: {damage: 40, for: 1, multiple: 10, all: false}}, 
                 {name: 'ダブルアタック', type: buturi, property: {damage: 25, for: 2, multiple: 5, all: false}}, 
                 {name: 'アイアンナックル', type: buturi, property: {damage: 60, for: 1, multiple: 15, all: false}}, 
-                {name: '魔弾', type: mahou, property: {damage: 40, for: 1, rate: 3, all: true}}, 
+                {name: '魔弾', type: mahou, property: {damage: 40, for: 1, rate: 3, all: false}}, 
                 {name: '強魔弾', type: mahou, property: {damacge: 60, for: 1, rate: 2, all: false}}, 
-                {name: '波動', type: mahou, property: {damage: 30, for: 1, rate: 3, all: false}}, 
+                {name: '波動', type: mahou, property: {damage: 30, for: 1, rate: 3, all: true}}, 
                 {name: '魔針銃', type: mahou, property: {damage: 20, for: 3, rate: 3, all: false}}];
 usercount = 0;
 let userinput = [];
