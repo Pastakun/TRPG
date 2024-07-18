@@ -52,7 +52,10 @@ const attack = [{name: 'ストライク', type: buturi, property: {damage: 50, f
                 {name: '魔弾', type: mahou, property: {damage: 40, for: 1, rate: 3, all: false}}, 
                 {name: '強魔弾', type: mahou, property: {damacge: 60, for: 1, rate: 2, all: false}}, 
                 {name: '波動', type: mahou, property: {damage: 30, for: 1, rate: 3, all: true}}, 
-                {name: '魔針銃', type: mahou, property: {damage: 20, for: 3, rate: 3, all: false}}];
+                {name: '魔針銃', type: mahou, property: {damage: 20, for: 3, rate: 3, all: false}},
+                {name: '回転斬り', type: buturi, property: {damage: 15, for: 1, multiple: 5, all: true}},
+                {name: 'ローキック', type: buturi, property: {damage: 35, for: 1, multiple: 5, all: false}},
+                {name: 'ダブルステップ', type: buturi, property: {damage: 40, for: 1, multiple: 5, all: false}}];
 usercount = 0;
 let userinput = [];
 let username = [];
@@ -96,6 +99,7 @@ function adduser(){
         attackselect.appendChild(attackoption);
     }
     userdiv.appendChild(attackselect);
+    userdiv.appendChild(document.createElement('br'));
     const userselect = document.createElement('select');
     userselect.class = 'userselect';
     for(let a = 0; a < username.length - 1; a++){
@@ -105,6 +109,7 @@ function adduser(){
         userselect.appendChild(useroption);
     }
     userdiv.appendChild(userselect);
+    userdiv.appendChild(document.createElement('br'));
     attackselect.addEventListener('input', function(e){
         if(attack[attackselect.value].property.all){
             userselect.style = 'display:none;';
@@ -133,4 +138,4 @@ function adduser(){
 document.getElementsByClassName('adduser')[0].addEventListener('click', function(){
     adduser();
 });
-//全体攻撃は敵ごとにロールするか
+//(敵の属性 - 攻撃の属性 + 1) % 3 - 1
